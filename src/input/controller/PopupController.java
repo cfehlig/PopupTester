@@ -15,23 +15,28 @@ public class PopupController
  public void start()
  {
 	String temp = myPopups.grabAnswer("Type in your name");
+	int myname;
+	
 	myPopups.showResponse("You typed in: " + myName);
 	
 	String temp = myPopups.grabAnswer("type in your age")
+			
 	int myAge = Integer.parseInt(temp);
+	
 	myPopups.showResponse("You typed " + myAge);
 	double myWeight = myPopups.grabAnswer(")
 	 
 	 myTestThing = new Thingy(myName, myage, myWeight);
  }
  
- private boolean is Integer(String input)
+ private boolean isInteger(String input)
  {
 	 boolean isInt = false;
 	 
 	 try
 	 {
-		 int temp = Integer.parseInt(input);isInt = true;
+		 int temp = Integer.parseInt(input);
+		 isInt = true;
 	 }
 	 catch(NumberFormatException error)
 	 {
