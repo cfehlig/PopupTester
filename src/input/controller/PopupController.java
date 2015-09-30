@@ -1,7 +1,7 @@
 package input.controller;
 
-import input.view.PopupView;
-import pop.up.model.Thingy;
+import input.view.PopupDisplay;
+import input.model.Thingy;
 
 public class PopupController
 {
@@ -41,22 +41,11 @@ public class PopupController
 	{
 		myAge = -9999;
 	}
-	
-	myPopups.showResponse("You typed in: " + myAge);
-	
 	String tempWeight = myPopups.grabAnswer("Type in your weight");
 	double myWeight = Double.parseDouble(tempWeight);
-	myPopups.showResponse("You typed " + myWeight);
+	myPopups.showResponse("You typed "+ myWeight);
 	
-	myTestThing = new Thingy(myName, myAge, myWeight);
-			
-	int myAge = Integer.parseInt(temp);
-	
-	myPopups.showResponse("You typed " + myAge);
-	double myWeight = myPopups.grabAnswer(")
-	 
-	 myTestThing = new Thingy(myName, myage, myWeight);
- }
+	myTestThing = new Thingy(myName,myAge,myWeight);
  
  private boolean isInteger(String input)
  {
@@ -83,8 +72,9 @@ public class PopupController
  		{
  			double temp = Double.parseDouble(input);
  			isDouble = true;
- 		}
+ 		
  		
  		return isDouble;
- 	}
-}
+ 		}
+ 		
+ 	}	
