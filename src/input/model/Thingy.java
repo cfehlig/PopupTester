@@ -1,12 +1,15 @@
 package input.model;
 
+//Creates a Thingy object to show access and proper variable types
 public class Thingy
 {
 	private String name;
 	private int age;
 	private double weight;
 	
-		
+		/**
+		 * Sets the values for name, age, and weight.
+		 */
 		public Thingy()
 		{
 			name = "";
@@ -14,6 +17,12 @@ public class Thingy
 			weight = -.008;
 		}
 		
+		/**
+		 * 
+		 * @param ame
+		 * @param age
+		 * @param weight
+		 */
 		public Thingy(String ame, int age, double weight)
 		{
 			//this. refers to the current instance of this object (A thingy)
@@ -30,10 +39,25 @@ public class Thingy
 		{
 			return age;
 		}
-		
 		public double getWeight()
 		{
 			return weight;
+		}
+		
+		
+		public void setName(String name)
+		{
+			this.name = name;
+		}
+		
+		public void setAge(int age)
+		{
+			this.age = age;
+		}
+		
+		public void setWeight(double weight)
+		{
+			this.weight = weight;
 		}
 	}
 
