@@ -1,6 +1,7 @@
 package input.controller;
 
-import input.view.PopupDisplay;
+import input.view.PopupView;
+import pop.up.model.Thingy;
 
 public class PopupController
 {
@@ -14,12 +15,40 @@ public class PopupController
 	
  public void start()
  {
-	String temp = myPopups.grabAnswer("Type in your name");
-	int myname;
+	 String myName = myPopups.grabAnswer("Type in your name");
+	 myPopups.showResponse("You typed in: " + myName);
 	
-	myPopups.showResponse("You typed in: " + myName);
+	 String temp = myPopups.grabAnswer("Type in your age");
+		int myAge = Integer.parseInt(temp);
+		myPopups.showResponse("You typed " + myAge);
+		
+		String tempWeight = myPopups.grabAnswer("Type in your weight");
+		double myWeight = Double.parseDouble(tempWeight);
+		myPopups.showResponse("You typed " + myWeight);
+		
+	myTestThing = new Thingy(myName, myAge, myWeight);
 	
-	String temp = myPopups.grabAnswer("type in your age")
+	while(!isInteger(temp))
+	{
+		temp = myPopups.grabAnswer("Type in a positive integer for your age!!!");
+	}
+	
+	if(isInteger(temp))
+	{
+		myAge = Integer.parseInt(temp);
+	}
+	else
+	{
+		myAge = -9999;
+	}
+	
+	myPopups.showResponse("You typed in: " + myAge);
+	
+	String tempWeight = myPopups.grabAnswer("Type in your weight");
+	double myWeight = Double.parseDouble(tempWeight);
+	myPopups.showResponse("You typed " + myWeight);
+	
+	myTestThing = new Thingy(myName, myAge, myWeight);
 			
 	int myAge = Integer.parseInt(temp);
 	
