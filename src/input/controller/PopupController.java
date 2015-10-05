@@ -27,6 +27,7 @@ public class PopupController
 		myPopups.showResponse("You typed " + myWeight);
 		
 	myTestThing = new Thingy(myName, myAge, myWeight);
+ 
 	
 	while(!isInteger(temp))
 	{
@@ -41,11 +42,8 @@ public class PopupController
 	{
 		myAge = -9999;
 	}
-	String tempWeight = myPopups.grabAnswer("Type in your weight");
-	double myWeight = Double.parseDouble(tempWeight);
-	myPopups.showResponse("You typed "+ myWeight);
 	
-	myTestThing = new Thingy(myName,myAge,myWeight);
+ }
  
  private boolean isInteger(String input)
  {
@@ -72,9 +70,14 @@ public class PopupController
  		{
  			double temp = Double.parseDouble(input);
  			isDouble = true;
- 		
- 		
- 		return isDouble;
+ 		}
+ 		catch(NumberFormatException error)
+ 		{
+ 			myPopups.showResponse("Not a double - bad value will be used");
  		}
  		
+ 		return isDouble;
+ 		
+ 		
  	}	
+}
